@@ -1,0 +1,22 @@
+{
+  "categories": [
+    "id",
+    "name",
+    "description",
+    "created_at"
+  ],
+  "hero": [
+    "id",
+    "subtitle_en",
+    "subtitle_de",
+    "title_en",
+    "title_de",
+    "description_en",
+    "description_de",
+    "image",
+    "button_text",
+    "button_link",
+    "status",
+    "created_at"
+  ]
+}
