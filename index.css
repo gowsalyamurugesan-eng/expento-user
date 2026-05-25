@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Quick Commerce App Design System */
+
+@layer base {
+
+  :root {
+    /* User Requested Variables (Flattened) */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f6f8fb;
+    --card-bg: #ffffff;
+    --text-primary: #0b1c2d;
+    --text-secondary: #6b7280;
+    --nav-bg: #0b1c2d;
+    --border-color: #e5e7eb;
+
+    /* Shadcn/Tailwind Mapping (HSL Channels) */
+    /* converting hex to HSL for tailwind config compatibility */
+    --background: 0 0% 100%;
+    /* #ffffff */
+    --foreground: 210 60% 11%;
+    /* #0b1c2d */
+
+    --card: 0 0% 100%;
+    /* #ffffff */
+    --card-foreground: 210 60% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 60% 11%;
+
+    --primary: 210 60% 11%;
+    /* Navy #0b1c2d */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    /* #f6f8fb approx */
+    --secondary-foreground: 210 60% 11%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 168 70% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    /* #e5e7eb approx */
+    --input: 220 13% 91%;
+    --ring: 210 60% 11%;
+
+    --radius: 0.75rem;
+
+    /* Custom */
+    --navy: 210 60% 11%;
+    --navy-light: 210 50% 20%;
+    --offer-bg: 142 60% 95%;
+    --offer-text: 142 70% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    /* Using User Variables Directly via var() or Tailwind bg-background */
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+
+    font-feature-settings: "cv11", "ss01";
+  }
+}
+
+@layer components {
+  .mobile-container {
+    @apply max-w-[430px] mx-auto min-h-screen relative;
+  }
+
+  .card-shadow {
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-shadow {
+    box-shadow: 0 -4px 20px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .bottom-nav-item {
+    @apply flex flex-col items-center justify-center gap-1 transition-colors;
+    color: var(--text-secondary);
+  }
+
+  .bottom-nav-item.active {
+    @apply text-primary;
+  }
+
+  /* Helper for User Variables */
+  .bg-primary-theme {
+    background-color: var(--bg-primary);
+  }
+
+  .bg-secondary-theme {
+    background-color: var(--bg-secondary);
+  }
+
+  .bg-card-theme {
+    background-color: var(--card-bg);
+  }
+
+  .text-primary-theme {
+    color: var(--text-primary);
+  }
+
+  .text-secondary-theme {
+    color: var(--text-secondary);
+  }
+
+  .bg-nav-theme {
+    background-color: var(--nav-bg);
+  }
+
+  .border-theme {
+    border-color: var(--border-color);
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
